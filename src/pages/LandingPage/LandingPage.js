@@ -14,6 +14,25 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 
+import { Container, Row, Col } from 'reactstrap';
+import Header from '../../components/Header'
+
+import styled, { keyframes } from 'styled-components'
+
+const spin = keyframes`
+  0% {
+    transform:rotate(0deg
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+`
+
+export const LogoWrapper = styled.div`
+  animation: ${spin} infinite 20s linear;
+`
+
+
 const styles = theme => ({
   main: {
     display: 'flex',
@@ -50,6 +69,7 @@ const styles = theme => ({
       letterSpacing: '.1em',
       textIndent: '.1rem'
     },
+    color:'orange',
     whiteSpace: 'nowrap'
   },
   headline: {
@@ -64,7 +84,8 @@ const styles = theme => ({
   },
   content: {
     height: '100%',
-    // paddingTop: theme.spacing.unit * 8,
+    backgroundColor:'#fff',
+    paddingTop: theme.spacing.unit * 8,
     [theme.breakpoints.up('sm')]: {
       paddingTop: theme.spacing.unit
     }
@@ -73,11 +94,18 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3
   },
   logo: {
-    color: 'red',
+    // position:'relative',
+    // display:'none',
     margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
     width: '100%',
-    height: '40vw',
-    maxHeight: 250
+    height: '20vw',
+    maxHeight: 250,
+    // animation: 'spin infinite 20s linear',
+    // left:'50%',
+    // height: '100%',
+    textAlign:'center',
+    // position:'relative',
+    transform:'rotate(35deg)',
   },
   steps: {
     maxWidth: theme.spacing.unit * 130,
@@ -92,6 +120,7 @@ const styles = theme => ({
   markdownElement: {},
   cardsContent: {
     padding: 15,
+    direction: 'rtl',
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
@@ -143,7 +172,7 @@ class LandingPage extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount() {y
     const { history } = this.props
 
     if (this.isAuthorised()) {
@@ -161,16 +190,152 @@ class LandingPage extends Component {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta name="apple-mobile-web-app-status-bar-style" content={theme.palette.primary.main} />
           <meta name="msapplication-navbutton-color" content={theme.palette.primary.main} />
-          <title>REACT MOST WANTED</title>
+          <title>OAK STAR MEDIA</title>
         </Helmet>
         <AppBar position='static'>
-          <Toolbar disableGutters>
+          <Toolbar disableGutters={false}>
             <div style={{ flex: 1 }} />
+
+           <Tooltip id="tooltip-icon1" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit' 
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+              צור קשר
+              </IconButton>
+            </Tooltip>
+
+
+           <Tooltip id="tooltip-icon2" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+              צור קשר
+              </IconButton>
+            </Tooltip>
+
+            
+           <Tooltip id="tooltip-icon3" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+              צור קשר
+              </IconButton>
+            </Tooltip>
+
+            
+           <Tooltip id="tooltip-icon4" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+צוות
+              </IconButton>
+            </Tooltip>
+
+
+            
+           <Tooltip id="tooltip-icon5" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+תיק עבודות
+              </IconButton>
+            </Tooltip>
+
+
+            
+           <Tooltip id="tooltip-icon6" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+אודותנו
+              </IconButton>
+            </Tooltip>
+
+
+            
+           <Tooltip id="tooltip-icon7" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+ראשי
+              </IconButton>
+            </Tooltip>
+
+
+
+
+
+<li class="menu-active" ><a href="#intro"></a></li>
+            <li><a href="#about"></a></li>
+            <li><a href="#services"></a></li>
+            <li><a href="#portfolio"></a></li>
+            <li><a href="#team"></a></li>
+            <li class="menu-has-children"><a href="">רשת חברתית</a>
+              <ul>
+                <li><a href="#">טלפון</a></li>
+                <li><a href="#">מייל</a></li>
+                <li><a href="#">וואצאפ</a></li>
+                <li><a href="#">פייסבוק</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">צור קשר</a></li>
+
+           <Tooltip id="tooltip-icon1" title="צור קשר">
+              <IconButton
+                name='about'
+                aria-label='צור קשר'
+                color='inherit'
+                onClick={() => { history.push('/contact') }}
+                rel='noopener'
+              >
+              צור קשר
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip id="tooltip-icon1" title="about">
+              <IconButton
+                name='about'
+                aria-label='About'
+                color='inherit'
+                onClick={() => { history.push('/about') }}
+                rel='noopener'
+              >  אודות
+              </IconButton>
+            </Tooltip>
+
 
             <Tooltip id="tooltip-icon1" title="Sign in">
               <IconButton
                 name='signin'
-                aria-label='Open Github'
+                aria-label='התחבר'
                 color='inherit'
                 onClick={() => { history.push('/signin') }}
                 rel='noopener'
@@ -183,7 +348,7 @@ class LandingPage extends Component {
                 name='github'
                 aria-label='Open Github'
                 color='inherit'
-                href='https://github.com/TarikHuber/react-most-wanted'
+                href='https://github.com/repoisrael/react-most-wanted'
                 target='_blank'
                 rel='noopener'
               >
@@ -198,21 +363,21 @@ class LandingPage extends Component {
 
           <div className={classes.hero}>
             <div className={classes.content}>
-              <img
-                src='/rmw.svg'
-                alt='Material-UI Logo'
-                className={classes.logo}
-              />
+
+        <Container fluid={true}>
+          <Header />
+        </Container>
+          
               <div className={classes.text}>
                 <Typography
                   variant='display2'
-                  align='center'
+                  align='right'
                   component='h1'
                   color='inherit'
                   gutterBottom
                   className={classes.title}
                 >
-                  {'REACT MOST WANTED'}
+                  {'site 2 be'}
                 </Typography>
                 <Typography
                   variant='headline'
@@ -221,7 +386,7 @@ class LandingPage extends Component {
                   gutterBottom
                   className={classes.headline}
                 >
-                  {'React Starter-Kit with all Most Wanted features.'}
+                  {'בניית אתרים ואפליקציות ווב'}
                 </Typography>
                 <Button
                   onClick={() => { history.push('/signin') }}
@@ -229,58 +394,56 @@ class LandingPage extends Component {
                   variant='outlined'
                   color='primary'
                 >
-                  {'Get Started'}
+                  {'תיק עבודות'}
                 </Button>
               </div>
 
               <div className={classes.cardsContent}>
                 <Card className={classes.card}>
                   <CardContent>
-                    <Typography variant="headline" component="h2">Installation</Typography>
+                    <Typography variant="headline" component="h2">עיצוב גרפי אישי</Typography>
                     <br />
-                    <Typography  >{`Just run this script to start:`}</Typography>
+                    <Typography  >{`הלוגו שלך הוא הפנים של החברה שלך. חשוב להראות נוכחות וגם פשטות. אנו נעצב אצ הלוגו עבורך`}</Typography>
                     <br />
-                    <Typography className={classes.pos} color="textSecondary"> npx create-react-app test-app --scripts-version rmw-react-scripts   </Typography>
+                    {/* <Typography className={classes.pos} color="textSecondary"> npx create-react-app test-app --scripts-version rmw-react-scripts   </Typography> */}
                   </CardContent>
                   <CardActions>
                     <Button size="small" onClick={() => {
                       var win = window.open('https://github.com/TarikHuber/rmw-shell', '_blank')
                       win.focus();
-                    }} >Learn More</Button>
+                    }} >צפה בדוגמאות</Button>
                   </CardActions>
                 </Card>
                 <Card className={classes.card}>
                   <CardContent>
-                    <Typography variant="headline" component="h2">Usage</Typography>
+                    <Typography variant="headline" component="h2">מיתוג מוצרים וחנות אונליין</Typography>
                     <br />
-                    <Typography  >{`Set your configuration to the App component:`}</Typography>
+                    <Typography  >{`תבנה בקלות את קטלוג המוצרים שלך בסליקה באשראי ובפייפאל`}</Typography>
                     <br />
                     <Typography className={classes.pos} color="textSecondary">
-                      {`import App from 'rmw-shell'`}
-                      <br />
-                      {`<App appConfig={{ configureStore, ...config }} />`}
+                      {`בין לקוחותינו`}        
                     </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" onClick={() => {
-                      var win = window.open('https://github.com/TarikHuber/react-most-wanted', '_blank')
+                      var win = window.open('https://github.com/repo/react-most-wanted', '_blank')
                       win.focus();
-                    }} >Learn More</Button>
+                    }} >אודותנו</Button>
                   </CardActions>
                 </Card>
                 <Card className={classes.card}>
                   <CardContent>
-                    <Typography variant="headline" component="h2">What is this?</Typography>
+                    <Typography variant="headline" component="h2">מי אנחנו?</Typography>
                     <Typography noWrap={false} color="textSecondary">
-                      {`This is a OPEN SOURCE demo application that demonstartes the usage of the rmw-shell library 
-                    with react, Material-UI and firebase.  `}
+                      {`אני אלון כוכב - לכן השם 
+                      Oak Star
+                      אני בונה כל סוגי האתרים מאתר תדמית פשוט לאפליקציה שרצה על מערכת מורכבת`}
                       <br />
-                      {` This demo has no purpose to do something as an app. 
-                    It is here just to show how everthing works together. `}
+                      {` בונים אתרי חנות אונליין  - או אפליקציה וובית. `}
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" onClick={() => { history.push('/signin') }} >Get started</Button>
+                    <Button size="small" onClick={() => { history.push('/signin') }} >לחצו להצעות מחיר</Button>
                   </CardActions>
                 </Card>
               </div>

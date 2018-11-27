@@ -1,0 +1,15 @@
+ <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="wherearemyglasses" x="0" y="0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+    </filter>
+	<filter id="f2">
+      <feColorMatrix values="
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 0
+"/>
+    </filter>
+  </defs>
+</svg>
